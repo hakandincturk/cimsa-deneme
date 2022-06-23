@@ -15,13 +15,24 @@ module.exports = {
 		 */
 
 		await queryInterface.bulkInsert('Users', [ {
-			username: 'usr',
+			username: 'usr-aip',
 			name: 'userName',
 			surname: 'userSurname',
-			email: 'usr@g.co',
+			email: 'usr-aip@g.co',
 			password: md5('123456'),
 			createdAt: new Date(),
-			updatedAt: new Date()
+			updatedAt: new Date(),
+			user_type_id: 1
+		},
+		{
+			username: 'usr-cua',
+			name: 'userName',
+			surname: 'userSurname',
+			email: 'usr-cua@g.co',
+			password: md5('123456'),
+			createdAt: new Date(),
+			updatedAt: new Date(),
+			user_type_id: 1
 		}
   
 		], {});

@@ -4,21 +4,21 @@ module.exports = {
 	development: {
 		username: DB_USERNAME,
 		password: DB_PASSWORD,
-		database: 'test_dev',
+		database: 'cimsa_dev',
 		host: DB_HOST,
 		dialect: 'postgres'
 	},
 	test: {
 		username: DB_USERNAME,
 		password: DB_PASSWORD,
-		database: 'test_test',
+		database: 'cimsa_test',
 		host: DB_HOST,
 		dialect: 'postgres'
 	},
 	production: {
 		username: DB_USERNAME,
 		password: DB_PASSWORD,
-		database: 'test_prod',
+		database: 'cimsa_prod',
 		host: DB_HOST,
 		dialect: 'postgres'
 	}
