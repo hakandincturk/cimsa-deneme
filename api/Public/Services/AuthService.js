@@ -35,14 +35,9 @@ class AuthService{
 				isDeleted: 0
 			}, {transction: t});
 
-			const userRole = await db.UserRoles.create({
-				user_id: user.id,
-				role_id: 2
-			}, {transction: t});
-
 			await t.commit();
 
-			if (!userRole) {
+			if (!user) {
 				return {
 					type: false,
 					message: 'user not created'
