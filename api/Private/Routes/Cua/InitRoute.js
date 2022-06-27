@@ -7,7 +7,7 @@ const app = express();
 
 app.use(CheckUserType.checkUserType(2));
 
-app.get('/health', CheckPermission.checkPermission(2, 'cua-permission-three'), ( req, res ) => {
+app.get('/health', CheckPermission.checkPermission(2, 'cua-permission-two'), ( req, res ) => {
 	res.json({type: true, message: 'private cua route working'});
 });
 
