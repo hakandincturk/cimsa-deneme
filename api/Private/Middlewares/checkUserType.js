@@ -12,20 +12,24 @@ class CheckUserType{
 				const token = req.headers.authorization.split(' ')[1];
 				const tokenData = await jwt.verify(token, JWT_SECRET);
 
-				const typeData = await db.UserTypes.findOne({
+				const typeData = await db.UTypes.findOne({
 					where: {name: type_name},
 					attributes: [ 'id' ]
 				});
 
-				const userData = await db.Users.findOne({
-					where: { 
-						id: tokenData.user_id,
-						user_type_id: typeData.id
+				const result = await db.Users.findOne({
+					where: {id: tokenData.user_id},
+					attributes: [ 'username' ],
+					include: {
+						model: db.UTypes,
+						where: {
+							id: typeData.id
+						}
 					}
 				});
 				
-				if (userData.length === 0) res.status(401).json({type: false, message: 'access denied 1'});
-				else next();
+				if ( !result ) res.status(401).json({type: false, message: 'access denied 1'});
+				else next(); 
 			}
 			catch (error) {
 				res.json({type: false, message: error.message});

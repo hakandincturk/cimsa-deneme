@@ -11,7 +11,7 @@ module.exports = {
 		 *   isBetaMember: false
 		 * }], {});
 		 */
-		await queryInterface.bulkInsert('UserTypes', [ 
+		await queryInterface.bulkInsert('UTypes', [ 
 			{
 				name: 'alt-isveren-programi',
 				createdAt: new Date(),
@@ -42,7 +42,7 @@ module.exports = {
 		 * Example:
 		 * await queryInterface.bulkDelete('People', null, {});
 		 */
-		await queryInterface.bulkDelete('UserTypes', null, {});
+		await queryInterface.bulkDelete('UTypes', null, {});
 
 	}
 };
