@@ -18,16 +18,14 @@ class CheckPermission{
 					include: {
 						model: db.Roles,
 						attributes: [ 'id', 'name' ],
-						include: [
-							{
-								model: db.Permissions,
-								where: { name: permName, utype: type }, //TODO: is utype required? 
-								through: {attributes: []}
-							}
-						]
+						include: {
+							model: db.Permissions,
+							where: { name: permName, utype: type }, //TODO: is utype required? 
+							through: {attributes: []}
+						}
 					}
 				});
-
+				
 				if (result.Roles.length === 0) res.status(401).json({
 					type: false,
 					message: 'access denied, you dont have perm'
