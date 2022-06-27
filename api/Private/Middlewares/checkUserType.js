@@ -22,13 +22,11 @@ class CheckUserType{
 					attributes: [ 'username' ],
 					include: {
 						model: db.UTypes,
-						where: {
-							id: typeData.id
-						}
+						where: { id: typeData.id }
 					}
 				});
 				
-				if ( !result ) res.status(401).json({type: false, message: 'access denied 1'});
+				if ( !result ) res.status(401).json({type: false, message: 'access denied 3'});
 				else next(); 
 			}
 			catch (error) {

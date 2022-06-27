@@ -32,7 +32,7 @@ class CheckPermission{
 						}
 					}
 				});
-				if (result.Roles.length === 0) res.status(401).json({type: false, message: 'access denied'});
+				if (result.Roles.length === 0) res.status(401).json({type: false, message: 'access denied 2'});
 				else next();
 			}
 			catch (error) {
