@@ -5,7 +5,7 @@ import { JWT_SECRET } from '../../src/config/envKeys';
 
 class CheckPermission{
 
-	static checkPermission (permName){
+	static checkPermission (type, permName){
 		return async (req, res, next) => {
 			try {
 				
@@ -18,15 +18,20 @@ class CheckPermission{
 					include: {
 						model: db.Roles,
 						attributes: [ 'id', 'name' ],
-						include: {
-							model: db.UTypes
-						}
+						include: [
+							{
+								model: db.Permissions,
+								where: { name: permName, utype: type }, //TODO: is utype required? 
+								through: {attributes: []}
+							}
+						]
 					}
 				});
 
-				res.status(200).json({type: true, message: 'sss', data: result});
-
-				if (result.Roles.length === 0) res.status(401).json({type: false, message: 'access denied 2'});
+				if (result.Roles.length === 0) res.status(401).json({
+					type: false,
+					message: 'access denied, you dont have perm'
+				});
 				else next();
 			}
 			catch (error) {

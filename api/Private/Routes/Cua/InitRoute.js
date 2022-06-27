@@ -1,11 +1,13 @@
 import express from 'express';
+
 import CheckUserType from '../../Middlewares/checkUserType';
+import CheckPermission from '../../Middlewares/checkPermission';
 
 const app = express();
 
-app.use(CheckUserType.checkUserType(1));
+app.use(CheckUserType.checkUserType(2));
 
-app.get('/health', ( req, res ) => {
+app.get('/health', CheckPermission.checkPermission(2, 'cua-permission-three'), ( req, res ) => {
 	res.json({type: true, message: 'private cua route working'});
 });
 

@@ -12,6 +12,8 @@ class CheckUserType{
 				const token = req.headers.authorization.split(' ')[1];
 				const tokenData = await jwt.verify(token, JWT_SECRET);
 
+				console.log(type);
+
 				const typeData = await db.UTypes.findOne({
 					where: { type: type },
 					attributes: [ 'id' ]

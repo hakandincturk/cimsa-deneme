@@ -7,7 +7,7 @@ const app = express();
 
 app.use(CheckUserType.checkUserType(1));
 
-app.get('/health', CheckPermission.checkPermission('aip-permission-one'), ( req, res ) => {
+app.get('/health', CheckPermission.checkPermission(1, 'aip-permission-one'), ( req, res ) => {
 	res.json({type: true, message: 'private aip route working'});
 });
 

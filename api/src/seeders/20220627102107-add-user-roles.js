@@ -19,8 +19,15 @@ module.exports = {
 			},
 			{
 				user_id: 3,
-				role_id: 7,
-				utype: 3,
+				role_id: 3,
+				utype: 1,
+				createdAt: new Date(),
+				updatedAt: new Date()
+			},
+			{
+				user_id: 3,
+				role_id: 4,
+				utype: 2,
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}

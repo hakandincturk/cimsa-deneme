@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 				otherKey: 'user_id'
 			});
 
-			Roles.hasMany(models.UTypes, { foreignKey: 'id'});
+			Roles.hasMany(models.UTypes, { foreignKey: 'type'});
 		}
 	
 	}
