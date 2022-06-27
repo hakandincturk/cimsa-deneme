@@ -11,7 +11,7 @@ module.exports = {
 			name: {
 				type: Sequelize.STRING
 			},
-			utype_id: {
+			utype: {
 				type: Sequelize.INTEGER,
 				references: {
 					model: 'UTypes',

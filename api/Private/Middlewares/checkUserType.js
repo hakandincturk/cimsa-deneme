@@ -5,7 +5,7 @@ import { JWT_SECRET } from '../../src/config/envKeys';
 
 class CheckUserType{
 
-	static checkUserType (type_name){
+	static checkUserType (type){
 		return async (req, res, next) => {
 			try {
 				
@@ -13,7 +13,7 @@ class CheckUserType{
 				const tokenData = await jwt.verify(token, JWT_SECRET);
 
 				const typeData = await db.UTypes.findOne({
-					where: {name: type_name},
+					where: { type: type },
 					attributes: [ 'id' ]
 				});
 

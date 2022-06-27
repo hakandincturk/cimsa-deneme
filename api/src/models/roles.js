@@ -1,4 +1,5 @@
 'use strict';
+const { INTEGER } = require('sequelize');
 const {
 	Model
 } = require('sequelize');
@@ -21,12 +22,14 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'role_id',
 				otherKey: 'user_id'
 			});
+
+			Roles.hasMany(models.UTypes, { foreignKey: 'id'});
 		}
 	
 	}
 	Roles.init({
 		name: DataTypes.STRING,
-		utype_id: DataTypes.INTEGER
+		utype: DataTypes.INTEGER
 	}, {
 		sequelize,
 		modelName: 'Roles'

@@ -24,12 +24,12 @@ module.exports = {
 					key: 'id'
 				}
 			},
-			utype_id: {
+			utype: {
 				type: Sequelize.INTEGER,
 				allowNull: false,
 				references: {
 					model: 'UTypes',
-					key: 'id'
+					key: 'type'
 				}
 			},
 			createdAt: {

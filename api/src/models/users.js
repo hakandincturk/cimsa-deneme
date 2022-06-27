@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
 			Users.belongsToMany(models.UTypes, {
 				through: models.UserTypes,
 				foreignKey: 'user_id',
-				otherKey: 'utype_id'
+				otherKey: 'utype'
 			});
+			Users.belongsToMany(models.Roles, {
+				through: models.UserRoles,
+				foreignKey: 'user_id',
+				otherKey: 'role_id'
+			});
+
 		}
 	
 	}

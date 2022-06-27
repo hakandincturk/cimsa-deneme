@@ -15,9 +15,8 @@ module.exports = {
 					model: 'Users',
 					key: 'id'
 				}
-				
 			},
-			utype_id: {
+			utype: {
 				type: Sequelize.INTEGER,
 				allowNull: false,
 				references: {

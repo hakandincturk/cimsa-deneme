@@ -3,7 +3,7 @@ import CheckUserType from '../../Middlewares/checkUserType';
 
 const app = express();
 
-app.use(CheckUserType.checkUserType('usta-analiz'));
+app.use(CheckUserType.checkUserType(1));
 
 app.get('/health', ( req, res ) => {
 	res.json({type: true, message: 'private cuaSecond route working'});

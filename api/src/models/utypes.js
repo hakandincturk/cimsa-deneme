@@ -13,14 +13,15 @@ module.exports = (sequelize, DataTypes) => {
 		static associate(models) {
 			UTypes.belongsToMany(models.Users, {
 				through: models.UserTypes,
-				foreignKey: 'utype_id',
+				foreignKey: 'utype',
 				otherKey: 'user_id'
 			});
 		}
 	
 	}
 	UTypes.init({
-		name: DataTypes.STRING
+		name: DataTypes.STRING,
+		type: DataTypes.INTEGER	
 	}, {
 		sequelize,
 		modelName: 'UTypes'

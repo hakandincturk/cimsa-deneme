@@ -12,7 +12,7 @@ module.exports = {
 				type: Sequelize.STRING,
 				allowNull: false
 			},
-			utype_id: {
+			utype: {
 				type: Sequelize.INTEGER,
 				allowNull: false,
 				references: {

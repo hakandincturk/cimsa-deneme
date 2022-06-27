@@ -7,73 +7,73 @@ module.exports = {
 				name: 'aip-permission-one',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 1
+				utype: 1
 			}, 
 			{
 				name: 'aip-permission-two',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 1
+				utype: 1
 			}, 
 			{
 				name: 'aip-permission-three',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 1
+				utype: 1
 			}, 
 			{
 				name: 'aip-permission-four',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 1
+				utype: 1
 			},
 			{
 				name: 'cua-permission-one',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 2
+				utype: 2
 			}, 
 			{
 				name: 'cua-permission-two',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 2
+				utype: 2
 			}, 
 			{
 				name: 'cua-permission-three',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 2
+				utype: 2
 			}, 
 			{
 				name: 'cua-permission-four',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 2
+				utype: 2
 			},
 			{
 				name: 'hr-permission-one',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 3
+				utype: 3
 			}, 
 			{
 				name: 'hr-permission-two',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 3
+				utype: 3
 			}, 
 			{
 				name: 'hr-permission-three',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 3
+				utype: 3
 			}, 
 			{
 				name: 'hr-permission-four',
 				createdAt: new Date(),
 				updatedAt: new Date(),
-				utype_id: 3
+				utype: 3
 			}
 		
 		], {});

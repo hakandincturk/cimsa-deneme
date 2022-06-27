@@ -14,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
 			UserTypes.belongsToMany(models.Users, {
 				through: 'UserTypes',
 				foreignKey: 'user_id',
-				otherKey: 'utype_id'
+				otherKey: 'utype'
 			});
 		}
 	
 	}
 	UserTypes.init({
 		user_id: DataTypes.INTEGER,
-		utype_id: DataTypes.INTEGER
+		utype: DataTypes.INTEGER
 	}, {
 		sequelize,
 		modelName: 'UserTypes'
